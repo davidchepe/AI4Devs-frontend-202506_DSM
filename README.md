@@ -284,8 +284,14 @@ Para generar la base de datos utilizando Prisma, sigue estos pasos:
 ```
 npx prisma generate
 npx prisma migrate dev
-ts-node seed.ts
+npm run seed
 ```
+
+Si el comando `npm run seed` falla porque ya hay datos en la base de datos, puedes resetear la base de datos con:
+```
+npx prisma migrate reset
+```
+Este comando borrará todos los datos, aplicará las migraciones y ejecutará automáticamente el seed.
 
 Una vez has dado todos los pasos, deberías poder guardar nuevos candidatos, tanto via web, como via API, verlos en la base de datos y obtenerlos mediante GET por id. 
 
